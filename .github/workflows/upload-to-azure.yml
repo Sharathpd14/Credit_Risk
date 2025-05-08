@@ -11,7 +11,7 @@ jobs:
       - name: Checkout with Git LFS
         uses: actions/checkout@v3
         with:
-          lfs: true  
+          lfs: true  # Required to pull actual data files
 
       - name: Install Azure CLI
         run: |
@@ -25,6 +25,5 @@ jobs:
           az storage blob upload-batch \
             --account-name "$AZURE_STORAGE_ACCOUNT" \
             --account-key "$AZURE_STORAGE_KEY" \
-            --destination 'bronze' \
-            --source '.' \
+            --destination 'project-data/bronze' \ 
             --pattern '*'
