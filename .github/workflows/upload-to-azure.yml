@@ -25,7 +25,7 @@ jobs:
           az storage blob upload-batch \
             --account-name "$AZURE_STORAGE_ACCOUNT" \
             --account-key "$AZURE_STORAGE_KEY" \
-            --destination 'data/bronze' \
+            --destination 'project-data/bronze' \
             --source './Data' \
             --pattern '*'
           
